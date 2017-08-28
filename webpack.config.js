@@ -1,3 +1,5 @@
+var path = require('path');
+
 module.exports = {
   entry: './app/index.js',
   output: {
@@ -11,4 +13,7 @@ module.exports = {
       { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
     ]
   },
+  resolve: {
+    modules: [path.resolve("app"), "node_modules"]
+  }
 };
