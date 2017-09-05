@@ -62,7 +62,7 @@ class Resume_Container extends React.Component {
               <div>
                 <p>
                   I joined UESP (Utah Educational Savings Plan) to assist a team in the process of rebuilding an outdated .NET web application.
-                  While occassionally contributing to the REST API, I have primarily focused on the front-end portion of the re-write.
+                  While occassionally contributing to the REST API, I have primarily focused on the front-end portion of the rebuild.
                 </p>
                 <p>
                   At UESP, I am working as a key contributor to not only the code base, but also to the app's UX design, API structure, and best code practices.
