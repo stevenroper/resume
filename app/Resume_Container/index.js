@@ -57,7 +57,7 @@ class Resume_Container extends React.Component {
             company='Utah Educational Savings Plan'
             shortDescription={<span>Developed a new front-end architecture using React and Redux for an aging enterprise solution.</span>}
             currentJob={true}
-            dates={<span>11/2016 - Current</span>}
+            dates={<span>November 2016 - Current</span>}
             longDescription={
               <div>
                 <p>
@@ -70,12 +70,62 @@ class Resume_Container extends React.Component {
                 </p>
               </div>
             }
-            techStack={{
-              'React': '60%',
-              'Redux': '20%',
-              'Webpack': '10%',
-              'C#/.Net': '10%',
-            }}/>
+            techStack={[
+              {
+                name: 'React',
+                color: 'blue',
+                width: '60%',
+              },
+              {
+                name: 'Redux',
+                color: 'orange',
+                width: '20%',
+              },
+              {
+                name: 'Webpack',
+                color: 'mintGreen',
+                width: '10%',
+              },
+              {
+                name: 'C#/.NET',
+                color: 'gray',
+                width: '10%',
+              },
+            ]}/>
+            <Job_Card
+              jobTitle='Automation Engineer'
+              company='MasteryConnect'
+              shortDescription={<span>Created a custom testing framework with Ruby for MasteryConnect's web application</span>}
+              dates={<span>May 2015 - November 2016</span>}
+              longDescription={
+                <div>
+                  <p>
+                    While at MasteryConnect, I worked with a team to develop an internal testing framework for running automated UI and data tests against the company's
+                    web application. I was a key member in architecture decisions, making decisions on what would be the most scalable and sustainable solutions.
+                  </p>
+                  <p>
+                    I worked with product owners and developers to make sure new features were thoroughly testable. While at MasteryConnect,
+                    I also had many opportunities to contribute new features to the Rails application.
+                  </p>
+                </div>
+              }
+              techStack={[
+                {
+                  name: 'Ruby',
+                  color: 'blue',
+                  width: '70%',
+                },
+                {
+                  name: 'Selenium',
+                  color: 'orange',
+                  width: '20%',
+                },
+                {
+                  name: 'Rails',
+                  color: 'mintGreen',
+                  width: '10%',
+                },
+              ]}/>
         </div>
       </div>
     );
