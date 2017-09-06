@@ -56,39 +56,39 @@ class Job_Card extends React.Component {
         fontSize: '1.2em',
         marginBottom: '10px',
         color: colors.blue,
+        textTransform: 'uppercase'
       }
     };
   }
 
   techStackCompose() {
     const styles = this.getStyles();
-    let colorValues = Object.keys(colors).map( key => colors[key]);
 
-    let techDivs = Object.keys(this.props.techStack).map( (key, index) => {
-      let techStackStyles = {
-        height: '100%',
-        width: this.props.techStack[key],
-        backgroundColor: colorValues[index],
-        color: '#fff',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '0 10px',
-      };
-      return (
-        <div
-          key={key}
-          style={techStackStyles}>
-            {key}
-        </div>
-      );
+    let techDivs = this.props.techStack.map( tech => {
+        let techStackStyles = {
+          height: '100%',
+          width: tech.width,
+          backgroundColor: colors[tech.color],
+          color: '#fff',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '0 10px',
+        };
+        return (
+          <div
+            key={tech.name}
+            style={techStackStyles}>
+              {tech.name}
+          </div>
+        );
     });
+
 
     return (
       <div>
-        <div style={styles.techStackTitle}>Tech Stack</div>
+        <div style={styles.techStackTitle}>Primary Tech Stack</div>
         <div style={styles.techStackContainer}>
-
           {techDivs}
         </div>
       </div>
@@ -132,7 +132,13 @@ Job_Card.propTypes = {
   currentJob: PropTypes.bool,
   dates: PropTypes.node.isRequired,
   longDescription: PropTypes.node.isRequired,
-  techStack: PropTypes.object,
+  techStack: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      color: PropTypes.string.isRequired,
+      width: PropTypes.string.isRequired,
+    })
+  ),
 };
 
 export default Job_Card;
