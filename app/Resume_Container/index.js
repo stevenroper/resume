@@ -7,6 +7,17 @@ class Resume_Container extends React.Component {
 
   getStyles() {
     return {
+      pageContainer: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        backgroundColor: 'rgb(250, 250, 250)'
+      },
+      resumeContainer: {
+        width: '100%',
+        minWidth: '600px',
+        maxWidth: '1200px',
+      },
       nameHero: {
         width: '100%',
         backgroundColor: colors.orange,
@@ -29,14 +40,22 @@ class Resume_Container extends React.Component {
         backgroundColor: colors.blue,
         color: '#fff',
         fontSize: '1.3em',
-        marginBottom: '20px',
       },
       reverse: {
         unicodeBidi: 'bidi-override',
         direction: 'rtl',
       },
-      sectionHeader: {
-        margin: '0 15px'
+      resumeBody: {
+        backgroundColor: '#fff',
+        paddingTop: '20px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      },
+      section: {
+        margin: '0 15px',
+        width: '100%',
+        maxWidth: '590px',
       },
       sectionHeaderTitle: {
         textTransform: 'uppercase',
@@ -56,7 +75,8 @@ class Resume_Container extends React.Component {
     let styles = this.getStyles();
 
     return (
-      <div>
+      <div style={styles.pageContainer}>
+      <div style={styles.resumeContainer}>
         <div style={styles.nameHero}>
           <span style={styles.name}>STEVEN ROPER</span>
         </div>
@@ -66,11 +86,9 @@ class Resume_Container extends React.Component {
           <span style={styles.reverse}>repornevets/moc.buhtig</span>
         </div>
         <div style={styles.resumeBody}>
-          <div>
-            <div style={styles.sectionHeader}>
-              <div style={styles.sectionHeaderTitle}>Work</div>
-              <hr style={styles.sectionHeaderDivider}/>
-            </div>
+          <div style={styles.section}>
+            <div style={styles.sectionHeaderTitle}>Work</div>
+            <hr style={styles.sectionHeaderDivider}/>
             <Job_Card
               jobTitle='Web Developer'
               company='Utah Educational Savings Plan'
@@ -164,14 +182,31 @@ class Resume_Container extends React.Component {
               }
               techStack={[
                 {
-                  name: 'Vanilla JavaScript',
+                  name: 'JavaScript',
                   color: 'blue',
                   width: '100%',
                 },
               ]}/>
           </div>
-
+          <div style={styles.section}>
+            <div style={styles.sectionHeaderTitle}>Education</div>
+            <hr style={styles.sectionHeaderDivider}/>
+          </div>
+          <div style={styles.section}>
+            <div style={styles.sectionHeaderTitle}>Skills</div>
+            <hr style={styles.sectionHeaderDivider}/>
+          </div>
+          <div style={styles.section}>
+            <div style={styles.sectionHeaderTitle}>Other Interests</div>
+            <hr style={styles.sectionHeaderDivider}/>
+          </div>
+          <div style={styles.section}>
+            <div style={styles.sectionHeaderTitle}>References</div>
+            <hr style={styles.sectionHeaderDivider}/>
+            <div style={{ width: '100%', textAlign: 'center' }}>Available upon request.</div>
+          </div>
         </div>
+      </div>
       </div>
     );
   }
