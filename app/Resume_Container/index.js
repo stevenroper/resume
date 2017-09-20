@@ -35,6 +35,20 @@ class Resume_Container extends React.Component {
         unicodeBidi: 'bidi-override',
         direction: 'rtl',
       },
+      sectionHeader: {
+        margin: '0 15px'
+      },
+      sectionHeaderTitle: {
+        textTransform: 'uppercase',
+        fontSize: '1.5em',
+        textAlign: 'center',
+        color: colors.blue,
+        fontWeight: 'bold',
+      },
+      sectionHeaderDivider: {
+        border: 0,
+        borderTop: '1px solid rgba(0, 0, 0, 0.15)'
+      }
     };
   }
 
@@ -52,46 +66,51 @@ class Resume_Container extends React.Component {
           <span style={styles.reverse}>repornevets/moc.buhtig</span>
         </div>
         <div style={styles.resumeBody}>
-          <Job_Card
-            jobTitle='Web Developer'
-            company='Utah Educational Savings Plan'
-            shortDescription={<span>Developed a new front-end architecture using React and Redux for an aging enterprise solution.</span>}
-            currentJob={true}
-            dates={<span>November 2016 - Current</span>}
-            longDescription={
-              <div>
-                <p>
-                  I joined UESP (Utah Educational Savings Plan) to assist a team in the process of rebuilding an outdated .NET web application.
-                  While occassionally contributing to the REST API, I have primarily focused on the front-end portion of the rebuild.
-                </p>
-                <p>
-                  At UESP, I am working as a key contributor to not only the code base, but also to the app's UX design, API structure, and best code practices.
-                  I also have lead efforts in developing front-end build processes, unit testing, and product design.
-                </p>
-              </div>
-            }
-            techStack={[
-              {
-                name: 'React',
-                color: 'blue',
-                width: '60%',
-              },
-              {
-                name: 'Redux',
-                color: 'orange',
-                width: '20%',
-              },
-              {
-                name: 'Webpack',
-                color: 'mintGreen',
-                width: '10%',
-              },
-              {
-                name: 'C#/.NET',
-                color: 'gray',
-                width: '10%',
-              },
-            ]}/>
+          <div>
+            <div style={styles.sectionHeader}>
+              <div style={styles.sectionHeaderTitle}>Work</div>
+              <hr style={styles.sectionHeaderDivider}/>
+            </div>
+            <Job_Card
+              jobTitle='Web Developer'
+              company='Utah Educational Savings Plan'
+              shortDescription={<span>Developed a new front-end architecture using React and Redux for an aging enterprise solution.</span>}
+              currentJob={true}
+              dates={<span>November 2016 - Current</span>}
+              longDescription={
+                <div>
+                  <p>
+                    I joined UESP (Utah Educational Savings Plan) to assist a team in the process of rebuilding an outdated .NET web application.
+                    While occassionally contributing to the REST API, I have primarily focused on the front-end portion of the rebuild.
+                  </p>
+                  <p>
+                    At UESP, I am working as a key contributor to not only the code base, but also to the app's UX design, API structure, and best code practices.
+                    I also have lead efforts in developing front-end build processes, unit testing, and product design.
+                  </p>
+                </div>
+              }
+              techStack={[
+                {
+                  name: 'React',
+                  color: 'blue',
+                  width: '60%',
+                },
+                {
+                  name: 'Redux',
+                  color: 'orange',
+                  width: '20%',
+                },
+                {
+                  name: 'Webpack',
+                  color: 'mintGreen',
+                  width: '10%',
+                },
+                {
+                  name: 'C#/.NET',
+                  color: 'gray',
+                  width: '10%',
+                },
+              ]}/>
             <Job_Card
               jobTitle='Automation Engineer'
               company='MasteryConnect'
@@ -126,6 +145,32 @@ class Resume_Container extends React.Component {
                   width: '10%',
                 },
               ]}/>
+            <Job_Card
+              jobTitle='Paid Search Strategist'
+              company='Clearlink'
+              shortDescription={<span>Automated paid search strategies using JavaScript</span>}
+              dates={<span>March 2014 - May 2016</span>}
+              longDescription={
+                <div>
+                  <p>
+                    At Clearlink, I managed several high-spending, national paid search campaigns. To increase spending effeciency and boost ad copy effectiveness,
+                    I wrote automated scripts that constantly monitored those accounts. That data was then used to adjust campaigns tactics and ensure our
+                    clients' return on investment.
+                  </p>
+                  <p>
+                    I also worked with the design and web teams to secure the best SEO and marketing tactics for our clients' products.
+                  </p>
+                </div>
+              }
+              techStack={[
+                {
+                  name: 'Vanilla JavaScript',
+                  color: 'blue',
+                  width: '100%',
+                },
+              ]}/>
+          </div>
+
         </div>
       </div>
     );
