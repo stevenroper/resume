@@ -17,7 +17,7 @@ class Job_Card extends React.Component {
   getStyles() {
     return {
       container: {
-        margin: '20px 15px',
+        margin: '20px 0',
         boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.35)',
         padding: '10px',
         cursor: 'pointer',
@@ -36,7 +36,6 @@ class Job_Card extends React.Component {
       },
       divider: {
         border: 0,
-        // borderTop: `1px solid ${colors.blue}`
         borderTop: '1px solid rgba(0, 0, 0, 0.15)'
       },
       titleBar: {
@@ -88,7 +87,7 @@ class Job_Card extends React.Component {
 
     return (
       <div>
-        <div style={styles.techStackTitle}>Primary Tech Stack</div>
+        <div style={styles.techStackTitle}>Languages & Tools</div>
         <div style={styles.techStackContainer}>
           {techDivs}
         </div>
