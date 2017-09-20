@@ -138,7 +138,7 @@ class Resume_Container extends React.Component {
                 <div>
                   <p>
                     While at MasteryConnect, I worked with a team to develop an internal testing framework for running automated UI and data tests against the company's
-                    web application. I was a key member in architecture decisions, making decisions on what would be the most scalable and sustainable solutions.
+                    web application. I was a key member in making decisions on what would be the most scalable and sustainable software architecture solutions.
                   </p>
                   <p>
                     I worked with product owners and developers to make sure new features were thoroughly testable. While at MasteryConnect,
