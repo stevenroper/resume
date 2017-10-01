@@ -1,6 +1,8 @@
 import React from 'react';
 
 import Job_Card from './components/Job_Card'
+import Education_Card from './components/Education_Card';
+import Section from './components/Section';
 import colors from 'config/colors';
 
 class Resume_Container extends React.Component {
@@ -52,22 +54,6 @@ class Resume_Container extends React.Component {
         flexDirection: 'column',
         alignItems: 'center',
       },
-      section: {
-        margin: '0 15px',
-        width: '100%',
-        maxWidth: '590px',
-      },
-      sectionHeaderTitle: {
-        textTransform: 'uppercase',
-        fontSize: '1.5em',
-        textAlign: 'center',
-        color: colors.blue,
-        fontWeight: 'bold',
-      },
-      sectionHeaderDivider: {
-        border: 0,
-        borderTop: '1px solid rgba(0, 0, 0, 0.15)'
-      }
     };
   }
 
@@ -86,9 +72,7 @@ class Resume_Container extends React.Component {
           <span style={styles.reverse}>repornevets/moc.buhtig</span>
         </div>
         <div style={styles.resumeBody}>
-          <div style={styles.section}>
-            <div style={styles.sectionHeaderTitle}>Work</div>
-            <hr style={styles.sectionHeaderDivider}/>
+          <Section title='Work'>
             <Job_Card
               jobTitle='Web Developer'
               company='Utah Educational Savings Plan'
@@ -187,24 +171,26 @@ class Resume_Container extends React.Component {
                   width: '100%',
                 },
               ]}/>
-          </div>
-          <div style={styles.section}>
-            <div style={styles.sectionHeaderTitle}>Education</div>
-            <hr style={styles.sectionHeaderDivider}/>
-          </div>
-          <div style={styles.section}>
-            <div style={styles.sectionHeaderTitle}>Skills</div>
-            <hr style={styles.sectionHeaderDivider}/>
-          </div>
-          <div style={styles.section}>
-            <div style={styles.sectionHeaderTitle}>Other Interests</div>
-            <hr style={styles.sectionHeaderDivider}/>
-          </div>
-          <div style={styles.section}>
-            <div style={styles.sectionHeaderTitle}>References</div>
-            <hr style={styles.sectionHeaderDivider}/>
+          </Section>
+          <Section title='Education'>
+            <Education_Card
+              major='Web Development'
+              school='DevMountain'
+              dates='August 2015'
+              description='Coding bootcamp focused on front-end web development'/>
+            <Education_Card
+              major='B.A. Media Arts'
+              school='Brigham Young University'
+              dates='August 2013'
+              description='Bachelor of Arts in Media Arts (Film) with an emphasis in audio production'/>
+          </Section>
+          <Section title='Skills'>
+          </Section>
+          <Section title='Other Interests'>
+          </Section>
+          <Section title='References'>
             <div style={{ width: '100%', textAlign: 'center' }}>Available upon request.</div>
-          </div>
+          </Section>
         </div>
       </div>
       </div>
