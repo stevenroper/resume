@@ -3,6 +3,8 @@ import React from 'react';
 import Job_Card from './components/Job_Card'
 import Education_Card from './components/Education_Card';
 import Section from './components/Section';
+import Skills_Tag from './components/Skills_Tag';
+
 import colors from 'config/colors';
 
 class Resume_Container extends React.Component {
@@ -36,7 +38,7 @@ class Resume_Container extends React.Component {
       },
       contactInfo: {
         display: 'flex',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         alignItems: 'center',
         padding: '10px 10px',
         backgroundColor: colors.blue,
@@ -47,12 +49,22 @@ class Resume_Container extends React.Component {
         unicodeBidi: 'bidi-override',
         direction: 'rtl',
       },
+      contactInfoDivider: {
+        margin: '0 15px',
+      },
       resumeBody: {
         backgroundColor: '#fff',
         paddingTop: '20px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+      },
+      skills: {
+        display: 'flex',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
+        marginBottom: '10px',
       },
     };
   }
@@ -67,8 +79,10 @@ class Resume_Container extends React.Component {
           <span style={styles.name}>STEVEN ROPER</span>
         </div>
         <div style={styles.contactInfo}>
-          <span style={styles.reverse}>6858.376.108</span>
           <span style={styles.reverse}>moc.liamg@repor.m.nevets</span>
+          <span style={styles.contactInfoDivider}>|</span>
+          <span style={styles.reverse}>6858.376.108</span>
+          <span style={styles.contactInfoDivider}>|</span>
           <span style={styles.reverse}>repornevets/moc.buhtig</span>
         </div>
         <div style={styles.resumeBody}>
@@ -185,6 +199,23 @@ class Resume_Container extends React.Component {
               description='Bachelor of Arts in Media Arts (Film) with an emphasis in audio production'/>
           </Section>
           <Section title='Skills'>
+            <div style={styles.skills}>
+              <Skills_Tag tagName='React' color={colors.blue} />
+              <Skills_Tag tagName='Redux' color={colors.blue} />
+              <Skills_Tag tagName='AngularJS' color={colors.blue} />
+              <Skills_Tag tagName='Webpack' color={colors.orange} />
+              <Skills_Tag tagName='Git' color={colors.orange} />
+              <Skills_Tag tagName='Ruby' color={colors.yellow} />
+              <Skills_Tag tagName='Ruby on Rails' color={colors.yellow} />
+              <Skills_Tag tagName='Mocha' color={colors.mintGreen} />
+              <Skills_Tag tagName='Enzyme' color={colors.mintGreen} />
+              <Skills_Tag tagName='Rspec' color={colors.mintGreen} />
+              <Skills_Tag tagName='Selenium' color={colors.mintGreen} />
+              <Skills_Tag tagName='Quick Learner' color={colors.gray} />
+              <Skills_Tag tagName='Detail Oriented' color={colors.gray} />
+              <Skills_Tag tagName='Creative' color={colors.gray} />
+              <Skills_Tag tagName='Seahorse Training' color={colors.gray} />
+            </div>
           </Section>
           <Section title='Other Interests'>
           </Section>
