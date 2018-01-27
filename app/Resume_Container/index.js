@@ -4,8 +4,10 @@ import Job_Card from './components/Job_Card'
 import Education_Card from './components/Education_Card';
 import Section from './components/Section';
 import Skills_Tag from './components/Skills_Tag';
+import Interests_Pie_Chart from './components/Interests_Pie_Chart';
 
 import colors from 'config/colors';
+
 
 class Resume_Container extends React.Component {
 
@@ -218,6 +220,7 @@ class Resume_Container extends React.Component {
             </div>
           </Section>
           <Section title='Other Interests'>
+            <Interests_Pie_Chart />
           </Section>
           <Section title='References'>
             <div style={{ width: '100%', textAlign: 'center' }}>Available upon request.</div>
