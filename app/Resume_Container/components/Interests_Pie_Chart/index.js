@@ -40,8 +40,15 @@ const otherInterests = [
 
 function Interests_Pie_Chart() {
 
+  const styles = {
+    container: {
+      display: 'flex',
+      justifyContent: 'center',
+    }
+  };
+
   return (
-    <div style={{ display: 'flex', justifyContent: 'center' }}>
+    <div style={styles.container}>
       <PieChart height={300} width={500}>
         <Pie
           data={otherInterests}
