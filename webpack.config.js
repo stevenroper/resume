@@ -11,6 +11,23 @@ module.exports = {
     loaders: [
       { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
       { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              localIdentName: '[local]_[path][name]_[hash:base64:5]',
+              modules: true,
+              importLoaders: 1,
+              sourceMap: true,
+            }
+          },
+          'postcss-loader',
+        ]
+      }
     ]
   },
   resolve: {

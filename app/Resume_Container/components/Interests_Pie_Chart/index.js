@@ -26,7 +26,7 @@ const otherInterests = [
     color: colors.blue,
   },
   {
-    name: 'Urban Farm Animals',
+    name: 'Urban Farming',
     value: 15,
     color: colors.yellow,
   },

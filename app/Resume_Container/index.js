@@ -8,17 +8,12 @@ import Interests_Pie_Chart from './components/Interests_Pie_Chart';
 
 import colors from 'config/colors';
 
+import cssStyles from './styles.css';
 
 class Resume_Container extends React.Component {
 
   getStyles() {
     return {
-      pageContainer: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        backgroundColor: 'rgb(250, 250, 250)'
-      },
       resumeContainer: {
         width: '100%',
         minWidth: '600px',
@@ -76,7 +71,7 @@ class Resume_Container extends React.Component {
     let styles = this.getStyles();
 
     return (
-      <div style={styles.pageContainer}>
+      <div className={cssStyles.pageContainer}>
         <div style={styles.resumeContainer}>
           <div style={styles.nameHero}>
             <span style={styles.name}>STEVEN ROPER</span>
