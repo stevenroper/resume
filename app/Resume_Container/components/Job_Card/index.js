@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import colors from 'config/colors';
 
+import styles from './styles.css';
+
 
 class Job_Card extends React.Component {
 
@@ -14,56 +16,7 @@ class Job_Card extends React.Component {
     };
   }
 
-  getStyles() {
-    return {
-      container: {
-        margin: '20px 0',
-        boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.35)',
-        padding: '10px',
-        cursor: 'pointer',
-        borderTop: `5px solid ${this.props.currentJob ? colors.mintGreen : colors.yellow}`,
-        borderRadius: '2px',
-      },
-      jobTitle: {
-        fontSize: '2em',
-        fontWeight: 'bold',
-        textTransform: 'uppercase',
-        marginBottom: '-8px',
-        color: colors.blue,
-      },
-      companyName: {
-        fontSize: '1.2em',
-      },
-      divider: {
-        border: 0,
-        borderTop: '1px solid rgba(0, 0, 0, 0.15)'
-      },
-      titleBar: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-      },
-      dates: {
-        fontSize: '1.3em',
-      },
-      techStackContainer: {
-        width: '100%',
-        height: '40px',
-        display: 'flex',
-      },
-      techStackTitle: {
-        textAlign: 'center',
-        fontSize: '1.2em',
-        marginBottom: '10px',
-        color: colors.blue,
-        textTransform: 'uppercase'
-      }
-    };
-  }
-
   techStackCompose() {
-    const styles = this.getStyles();
-
     let techDivs = this.props.techStack.map( tech => {
         let techStackStyles = {
           height: '100%',
@@ -87,8 +40,8 @@ class Job_Card extends React.Component {
 
     return (
       <div>
-        <div style={styles.techStackTitle}>Languages & Tools</div>
-        <div style={styles.techStackContainer}>
+        <div className={styles.techStackTitle}>Languages & Tools</div>
+        <div className={styles.techStackContainer}>
           {techDivs}
         </div>
       </div>
@@ -96,30 +49,27 @@ class Job_Card extends React.Component {
   }
 
   render() {
-    const styles = this.getStyles();
-
     return (
       <div
-        style={styles.container}
+        className={styles.container}
+        style={{ borderTop: `5px solid ${this.props.currentJob ? colors.mintGreen : colors.yellow}` }}
         onClick={() => this.setState({ expanded: !this.state.expanded })}>
-        <div style={styles.titleBar}>
-          <div>
-            <div style={styles.jobTitle}>{this.props.jobTitle}</div>
-            <div style={styles.companyName}>{this.props.company}</div>
+          <div className={styles.titleBar}>
+            <div className={styles.jobTitle}>{this.props.jobTitle}</div>
+            <div className={styles.companyName}>{this.props.company}</div>
+            <div className={styles.dates}>{this.props.dates}</div>
           </div>
-          <div style={styles.dates}>{this.props.dates}</div>
-        </div>
-        <hr style={styles.divider} />
-        <div>
-          { this.state.expanded
-            ? <div>
-                {this.props.longDescription}
-                <hr style={styles.divider} />
-                {this.techStackCompose()}
-              </div>
-            : this.props.shortDescription
-          }
-        </div>
+          <hr className={styles.divider} />
+          <div>
+            { this.state.expanded
+              ? <div>
+                  {this.props.longDescription}
+                  <hr className={styles.divider} />
+                  {this.techStackCompose()}
+                </div>
+              : this.props.shortDescription
+            }
+          </div>
       </div>
     );
   }

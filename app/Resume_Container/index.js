@@ -50,22 +50,22 @@ class Resume_Container extends React.Component {
                   {
                     name: 'React',
                     color: 'blue',
-                    width: '60%',
+                    width: '45%',
                   },
                   {
                     name: 'Redux',
                     color: 'orange',
-                    width: '20%',
+                    width: '15%',
                   },
                   {
                     name: 'Webpack',
                     color: 'mintGreen',
-                    width: '10%',
+                    width: '20%',
                   },
                   {
                     name: 'C#/.NET',
                     color: 'gray',
-                    width: '10%',
+                    width: '20%',
                   },
                 ]}/>
               <Job_Card
@@ -89,17 +89,17 @@ class Resume_Container extends React.Component {
                   {
                     name: 'Ruby',
                     color: 'blue',
-                    width: '70%',
+                    width: '50%',
                   },
                   {
                     name: 'Selenium',
                     color: 'orange',
-                    width: '20%',
+                    width: '30%',
                   },
                   {
                     name: 'Rails',
                     color: 'mintGreen',
-                    width: '10%',
+                    width: '20%',
                   },
                 ]}/>
               <Job_Card

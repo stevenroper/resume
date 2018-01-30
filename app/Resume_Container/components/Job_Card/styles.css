@@ -1,0 +1,84 @@
+@import '../../../styles/responsive.css';
+
+.container {
+  margin: 20px 0;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35);
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 2px;
+  &:hover {
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.35);
+  }
+}
+
+.titleBar {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-areas:
+    "jobTitle"
+    "companyName"
+    "dates";
+}
+
+.jobTitle, .companyName, .dates {
+  text-align: center;
+}
+
+.jobTitle {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: $blue;
+  grid-area: jobTitle;
+}
+
+.companyName { grid-area: companyName; }
+.dates { grid-area: dates; }
+
+.divider {
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.techStackContainer {
+  width: 100%;
+  height: 40px;
+  display: flex;
+}
+
+.techStackTitle {
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: $blue;
+  text-transform: uppercase
+}
+
+@mixin for-tablet-up {
+  .titleBar {
+    grid-template-columns: auto auto;
+    grid-template-areas:
+      "jobTitle dates"
+      "companyName dates";
+  }
+
+  .dates {
+    font-size: 1.3em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .companyName, .jobTitle {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .companyName {
+    font-size: 1.2em;
+  }
+
+  .jobTitle {
+    font-size: 2em;
+  }
+}
