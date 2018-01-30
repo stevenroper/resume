@@ -9,72 +9,24 @@ import Interests_Pie_Chart from './components/Interests_Pie_Chart';
 
 import colors from 'config/colors';
 
-import cssStyles from './styles.css';
+import styles from './styles.css';
 
 class Resume_Container extends React.Component {
 
   getStyles() {
     return {
-      resumeContainer: {
-        maxWidth: '1200px',
-        width: '100%',
-        marginBottom: '30px',
-      },
-      nameHero: {
-        width: '100%',
-        backgroundColor: colors.orange,
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-      },
-      name: {
-        margin: '30px 0',
-        color: '#fff',
-        fontSize: '5em',
-        fontWeight: 'bold',
-        letterSpacing: '5px',
-      },
-      contactInfo: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: '10px 10px',
-        backgroundColor: colors.blue,
-        color: '#fff',
-        fontSize: '1.3em',
-      },
-      reverse: {
-        unicodeBidi: 'bidi-override',
-        direction: 'rtl',
-      },
-      contactInfoDivider: {
-        margin: '0 15px',
-      },
-      resumeBody: {
-        backgroundColor: '#fff',
-        paddingTop: '20px',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-      },
-      skills: {
-        display: 'flex',
-        alignItems: 'center',
-        flexWrap: 'wrap',
-        justifyContent: 'space-around',
-        marginBottom: '10px',
-      },
+
     };
   }
 
   render() {
-    let styles = this.getStyles();
+    // let styles = this.getStyles();
 
     return (
-      <div className={cssStyles.pageContainer}>
-        <div style={styles.resumeContainer}>
+      <div className={styles.pageContainer}>
+        <div className={styles.resumeContainer}>
           <Header />
-          {/* <div style={styles.resumeBody}>
+          <div className={styles.resumeBody}>
             <Section title='Work'>
               <Job_Card
                 jobTitle='Web Developer'
@@ -188,7 +140,7 @@ class Resume_Container extends React.Component {
                 description='Bachelor of Arts in Media Arts (Film) with an emphasis in audio production'/>
             </Section>
             <Section title='Skills'>
-              <div style={styles.skills}>
+              <div className={styles.skills}>
                 <Skills_Tag tagName='React' color={colors.blue} />
                 <Skills_Tag tagName='Redux' color={colors.blue} />
                 <Skills_Tag tagName='AngularJS' color={colors.blue} />
@@ -206,13 +158,13 @@ class Resume_Container extends React.Component {
                 <Skills_Tag tagName='Seahorse Training' color={colors.gray} />
               </div>
             </Section>
-            <Section title='Other Interests'>
+            {/* <Section title='Other Interests'>
               <Interests_Pie_Chart />
             </Section>
             <Section title='References'>
               <div style={{ width: '100%', textAlign: 'center' }}>Available upon request.</div>
-            </Section>
-          </div> */}
+            </Section> */}
+          </div>
         </div>
       </div>
     );
