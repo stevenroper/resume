@@ -1,0 +1,66 @@
+@import '../../../styles/responsive.css';
+
+.nameContainer {
+  width: 100%;
+  background-color: $orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.name {
+  margin: 25px 0;
+  color: #fff;
+  font-size: 3em;
+  font-weight: bold;
+  letter-spacing: 5px;
+}
+
+.contactInfo {
+  background-color: $blue;
+  color: #fff;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-areas:
+    "phone"
+    "email"
+    "github";
+  padding: 5px 0;
+}
+
+.phone,
+.email,
+.github {
+  display: flex;
+  justify-content: center;
+}
+
+.phone { grid-area: phone; }
+.email { grid-area: email; }
+.github { grid-area: github; }
+
+.reverse {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+
+@mixin for-tablet-up {
+  .name {
+    font-size: 5em;
+  }
+  .contactInfo {
+    grid-template-columns: auto auto auto;
+    grid-template-areas:
+      "email phone github";
+  }
+
+  .phone, .email, .github {
+    font-size: 1.3em;
+  }
+}
+
+@mixin for-desktop-up {
+  .phone, .email, .github {
+    font-size: 1.5em;
+  }
+}

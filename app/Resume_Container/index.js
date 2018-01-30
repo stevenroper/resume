@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Header from './components/Header';
 import Job_Card from './components/Job_Card'
 import Education_Card from './components/Education_Card';
 import Section from './components/Section';
@@ -15,9 +16,8 @@ class Resume_Container extends React.Component {
   getStyles() {
     return {
       resumeContainer: {
-        width: '100%',
-        minWidth: '600px',
         maxWidth: '1200px',
+        width: '100%',
         marginBottom: '30px',
       },
       nameHero: {
@@ -73,17 +73,8 @@ class Resume_Container extends React.Component {
     return (
       <div className={cssStyles.pageContainer}>
         <div style={styles.resumeContainer}>
-          <div style={styles.nameHero}>
-            <span style={styles.name}>STEVEN ROPER</span>
-          </div>
-          <div style={styles.contactInfo}>
-            <span style={styles.reverse}>moc.liamg@repor.m.nevets</span>
-            <span style={styles.contactInfoDivider}>|</span>
-            <span style={styles.reverse}>6858.376.108</span>
-            <span style={styles.contactInfoDivider}>|</span>
-            <span style={styles.reverse}>repornevets/moc.buhtig</span>
-          </div>
-          <div style={styles.resumeBody}>
+          <Header />
+          {/* <div style={styles.resumeBody}>
             <Section title='Work'>
               <Job_Card
                 jobTitle='Web Developer'
@@ -221,7 +212,7 @@ class Resume_Container extends React.Component {
             <Section title='References'>
               <div style={{ width: '100%', textAlign: 'center' }}>Available upon request.</div>
             </Section>
-          </div>
+          </div> */}
         </div>
       </div>
     );
