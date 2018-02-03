@@ -1,0 +1,72 @@
+@import '../../../styles/responsive.css';
+
+.container {
+  margin: 20px 0;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35);
+  padding: 10px;
+  border-radius: 2px;
+}
+
+.educationHeader {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-areas:
+    "major"
+    "school"
+    "dates";
+}
+
+.major,
+.school,
+.dates {
+  text-align: center;
+}
+
+.major {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: $blue;
+  grid-area: major;
+}
+
+.school { grid-area: school; }
+
+.dates {
+  font-size: 1.2em;
+  grid-area: dates;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+@mixin for-tablet-up {
+  .educationHeader {
+    grid-template-columns: auto auto;
+    grid-template-areas:
+      "major dates"
+      "school dates";
+  }
+
+  .major, .school {
+    text-align: left;
+  }
+
+  .major {
+    font-size: 2em;
+  }
+
+  .school {
+    font-size: 1.2em;
+  }
+
+  .dates {
+    font-size: 1.3em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+  }
+}
