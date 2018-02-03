@@ -1,3 +1,5 @@
+@import '../../../styles/responsive.css';
+
 .container {
   display: flex;
   justify-content: center;
@@ -6,4 +8,10 @@
 .labels {
   font-weight: bold;
   font-size: .8em;
+}
+
+@mixin for-tablet-up {
+  .labels {
+    font-size: 1em;
+  }
 }

@@ -11,22 +11,14 @@ import colors from 'config/colors';
 
 import styles from './styles.css';
 
-class Resume_Container extends React.Component {
+function Resume_Container() {
 
-  getStyles() {
-    return {
-
-    };
-  }
-
-  render() {
-    // let styles = this.getStyles();
-
-    return (
-      <div className={styles.pageContainer}>
-        <div className={styles.resumeContainer}>
-          <Header />
-          <div className={styles.resumeBody}>
+  return (
+    <div className={styles.pageContainer}>
+      <div className={styles.resumeContainer}>
+        <Header />
+        <div className={styles.resumeBody}>
+          <div className={styles.work}>
             <Section title='Work'>
               <Job_Card
                 jobTitle='Web Developer'
@@ -127,6 +119,8 @@ class Resume_Container extends React.Component {
                   },
                 ]}/>
             </Section>
+          </div>
+          <div className={styles.education}>
             <Section title='Education'>
               <Education_Card
                 major='Web Development'
@@ -139,8 +133,10 @@ class Resume_Container extends React.Component {
                 dates='August 2013'
                 description='Bachelor of Arts in Media Arts (Film) with an emphasis in audio production'/>
             </Section>
+          </div>
+          <div className={styles.skillsInterests}>
             <Section title='Skills'>
-              <div className={styles.skills}>
+              <div className={styles.skillsContainer}>
                 <Skills_Tag tagName='React' color={colors.blue} />
                 <Skills_Tag tagName='Redux' color={colors.blue} />
                 <Skills_Tag tagName='AngularJS' color={colors.blue} />
@@ -161,14 +157,16 @@ class Resume_Container extends React.Component {
             <Section title='Other Interests'>
               <Interests_Pie_Chart />
             </Section>
+          </div>
+          <div className={styles.references}>
             <Section title='References'>
               <div style={{ width: '100%', textAlign: 'center' }}>Available upon request.</div>
             </Section>
           </div>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default Resume_Container;

@@ -1,3 +1,5 @@
+@import '../styles/responsive.css';
+
 * {
   box-sizing: border-box;
 }
@@ -18,15 +20,67 @@
 .resumeBody {
   background-color: #fff;
   padding-top: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-areas:
+    "work"
+    "education"
+    "skillsInterests"
+    "otherInterests"
+    "references";
 }
 
-.skills {
+.skillsContainer {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-around;
   margin-bottom: 10px;
+}
+
+.work { grid-area: work }
+.education { grid-area: education }
+.skillsInterests { grid-area: skillsInterests }
+.otherInterests { grid-area: otherInterests }
+.references { grid-area: references }
+
+.work,
+.education,
+.skillsInterests,
+.otherInterests,
+.references {
+  width: 100%;
+}
+
+@mixin for-tablet-up {
+  .resumeBody {
+    grid-auto-columns: auto auto auto;
+    grid-template-areas:
+      ". work ."
+      ". education ."
+      ". skillsInterests ."
+      ". otherInterests ."
+      ". references .";
+  }
+  .work,
+  .education,
+  .skillsInterests,
+  .otherInterests,
+  .references {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@mixin for-desktop-up {
+  .resumeBody {
+    grid-auto-columns: 1fr 1fr;
+    grid-auto-rows: auto auto;
+    grid-template-areas:
+      "work skillsInterests"
+      "work otherInterests"
+      "education references"
+      "education ."
+  }
 }
