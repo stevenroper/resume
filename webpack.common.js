@@ -1,12 +1,20 @@
-var path = require('path');
+const path = require('path');
+const htmlWebpackPlugin = require('html-webpack-plugin');
+const cleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   entry: './app/index.js',
   output: {
-    path: __dirname,
-    publicPath: '/',
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[hash].bundle.js'
   },
+  plugins: [
+    new cleanWebpackPlugin(),
+    new htmlWebpackPlugin({
+      template: './index.html',
+      title: 'Steven Roper',
+    })
+  ],
   module: {
     loaders: [
       { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
