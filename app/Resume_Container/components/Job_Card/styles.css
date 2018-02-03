@@ -4,6 +4,7 @@
   margin: 20px 0;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35);
   padding: 10px;
+  /*padding-bottom: 5px;*/
   cursor: pointer;
   border-radius: 2px;
   &:hover {
@@ -52,6 +53,15 @@
   margin-bottom: 10px;
   color: $blue;
   text-transform: uppercase
+}
+
+.expandHideIconContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.expandHideIcon {
+  font-size: 1.5em;
 }
 
 @mixin for-tablet-up {

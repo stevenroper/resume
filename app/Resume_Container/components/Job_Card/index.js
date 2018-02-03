@@ -63,13 +63,22 @@ class Job_Card extends React.Component {
           <div>
             { this.state.expanded
               ? <div>
+                  <div className={styles.expandHideIconContainer}>
+                    <span className='material-icons'><span className={styles.expandHideIcon}>keyboard_arrow_up</span></span>
+                  </div>
                   {this.props.longDescription}
                   <hr className={styles.divider} />
                   {this.techStackCompose()}
                 </div>
-              : this.props.shortDescription
+              : <div>
+                  <div>{this.props.shortDescription}</div>
+                  <div className={styles.expandHideIconContainer}>
+                    <span className='material-icons'><span className={styles.expandHideIcon}>keyboard_arrow_down</span></span>
+                  </div>
+                </div>
             }
           </div>
+
       </div>
     );
   }
