@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.common.js",
-    "build": "webpack --config webpack.prod.js",
+    "build": "webpack --progress --config webpack.prod.js",
     "build:clean": "rm -rf build dist"
   },
   "repository": {

@@ -12,7 +12,6 @@ module.exports = {
     new cleanWebpackPlugin(),
     new htmlWebpackPlugin({
       template: './index.html',
-      title: 'Steven Roper',
     })
   ],
   module: {
