@@ -16,9 +16,9 @@ const otherInterests = [
     color: colors.orange,
   },
   {
-    name: 'Film',
-    value: 15,
-    color: colors.mintGreen,
+    name: 'Collecting Hobbies',
+    value: 10,
+    color: colors.gray
   },
   {
     name: 'My Dog',
@@ -30,40 +30,66 @@ const otherInterests = [
     value: 15,
     color: colors.yellow,
   },
+
   {
-    name: 'Collecting Hobbies',
-    value: 10,
-    color: colors.gray
-  }
+    name: 'Film',
+    value: 15,
+    color: colors.mintGreen,
+  },
 ];
 
+import styles from './styles.css';
 
-function Interests_Pie_Chart() {
 
-  const styles = {
-    container: {
-      display: 'flex',
-      justifyContent: 'center',
-    }
-  };
+class Interests_Pie_Chart extends React.Component {
 
-  return (
-    <div style={styles.container}>
-      <PieChart height={300} width={500}>
-        <Pie
-          data={otherInterests}
-          innerRadius={0}
-          dataKey='value'
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      windowWidth: window.innerWidth,
+    };
+
+    this.windowWidthSet = this.windowWidthSet.bind(this);
+  }
+
+  windowWidthSet() {
+    this.setState({
+      windowWidth: window.innerWidth,
+    });
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.windowWidthSet);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.windowWidthSet);
+  }
+
+  render() {
+    return (
+      <div className={styles.container}>
+        <PieChart
+          height={this.state.windowWidth < 600 ? 200 : 300}
+          width={this.state.windowWidth < 600 ? 350 : 500}
         >
-            {
-              otherInterests.map( (interest, index) => <Cell key={`interest-${index}`} fill={interest.color} />)
-            }
-            <LabelList dataKey='name' position='outside' fill='#000' offset={10} style={{ fontWeight: 'bold' }}/>
-        </Pie>
+          <Pie
+            data={otherInterests}
+            innerRadius={0}
+            // outerRadius={50}
+            dataKey='value'
+          >
+              {
+                otherInterests.map( (interest, index) => <Cell key={`interest-${index}`} fill={interest.color} />)
+              }
+              <LabelList dataKey='name' position='outside' fill='#000' offset={10} className={styles.labels}/>
+          </Pie>
 
-      </PieChart>
-    </div>
-  );
+        </PieChart>
+      </div>
+    );
+  }
 }
 
 export default Interests_Pie_Chart;

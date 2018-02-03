@@ -158,12 +158,12 @@ class Resume_Container extends React.Component {
                 <Skills_Tag tagName='Seahorse Training' color={colors.gray} />
               </div>
             </Section>
-            {/* <Section title='Other Interests'>
+            <Section title='Other Interests'>
               <Interests_Pie_Chart />
             </Section>
             <Section title='References'>
               <div style={{ width: '100%', textAlign: 'center' }}>Available upon request.</div>
-            </Section> */}
+            </Section>
           </div>
         </div>
       </div>

@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.labels {
+  font-weight: bold;
+  font-size: .8em;
+}
