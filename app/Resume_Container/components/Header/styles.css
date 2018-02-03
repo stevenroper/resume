@@ -11,9 +11,9 @@
 .name {
   margin: 25px 0;
   color: #fff;
-  font-size: 3em;
+  font-size: 3.5em;
   font-weight: bold;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
 }
 
 .contactInfo {
@@ -47,6 +47,7 @@
 @mixin for-tablet-up {
   .name {
     font-size: 5em;
+    letter-spacing: 5px;
   }
   .contactInfo {
     grid-template-columns: auto auto auto;
@@ -62,5 +63,10 @@
 @mixin for-desktop-up {
   .phone, .email, .github {
     font-size: 1.5em;
+  }
+
+  .name {
+    font-size: 7em;
+    letter-spacing: 7px;
   }
 }
