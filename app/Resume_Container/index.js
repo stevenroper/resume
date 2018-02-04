@@ -142,6 +142,8 @@ function Resume_Container() {
                 <Skills_Tag tagName='AngularJS' color={colors.blue} />
                 <Skills_Tag tagName='Webpack' color={colors.orange} />
                 <Skills_Tag tagName='Git' color={colors.orange} />
+                <Skills_Tag tagName='SQL' color={colors.orange} />
+                <Skills_Tag tagName='Jenkins' color={colors.orange} />
                 <Skills_Tag tagName='Ruby' color={colors.yellow} />
                 <Skills_Tag tagName='Ruby on Rails' color={colors.yellow} />
                 <Skills_Tag tagName='Mocha' color={colors.mintGreen} />
